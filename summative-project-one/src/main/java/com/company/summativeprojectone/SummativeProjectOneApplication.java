@@ -1,13 +1,13 @@
-package com.company.summativeproject1;
+package com.company.summativeprojectone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SummativeProject1Application {
+public class SummativeProjectOneApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SummativeProject1Application.class, args);
+		SpringApplication.run(SummativeProjectOneApplication.class, args);
 	}
 
 }

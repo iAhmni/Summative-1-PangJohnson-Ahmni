@@ -1,10 +1,10 @@
-package com.company.summativeproject1;
+package com.company.summativeprojectone;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SummativeProject1ApplicationTests {
+class SummativeProjectOneApplicationTests {
 
 	@Test
 	void contextLoads() {
