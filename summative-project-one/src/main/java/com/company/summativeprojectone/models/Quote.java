@@ -1,7 +1,7 @@
 package com.company.summativeprojectone.models;
 
 public class Quote {
-    String id;
+    int id;
     String author;
     String quote;
 
@@ -10,11 +10,11 @@ public class Quote {
         this.quote = quote;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
