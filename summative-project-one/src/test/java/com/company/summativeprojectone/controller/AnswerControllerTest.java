@@ -1,5 +1,6 @@
 package com.company.summativeprojectone.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,11 @@ public class AnswerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    private ObjectMapper mapper = new ObjectMapper();
+
     @Test
     public void shouldReturnAQuote() throws Exception {
-        String question = "How are you?";
+        String question = mapper.writeValueAsString("How are you?");
         // ACT
         mockMvc.perform(post("/magic")
                         .content(question)
