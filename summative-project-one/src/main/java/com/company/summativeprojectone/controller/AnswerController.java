@@ -20,7 +20,7 @@ public class AnswerController {
             new Answer(5, "Will Twitter go bankrupt", "It is certain")
     ));
 
-    @RequestMapping(value = "/city", method = RequestMethod.POST)
+    @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Answer askQuestion(@RequestBody Answer question) {
         Random rand = new Random();
