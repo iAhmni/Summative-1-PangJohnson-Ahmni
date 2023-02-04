@@ -9,12 +9,12 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(QuoteController.class)
 public class QuoteControllerTest {
-
     // Wiring in the MockMvc object
     @Autowired
     private MockMvc mockMvc;
@@ -24,6 +24,7 @@ public class QuoteControllerTest {
         // ACT
         mockMvc.perform(get("/quote"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isNotEmpty());
     }
 }
