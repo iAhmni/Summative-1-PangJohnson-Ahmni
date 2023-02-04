@@ -32,7 +32,6 @@ public class QuoteController {
     @RequestMapping(value = "/quote", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Quote getQuote() {
-        int index = randomGenerator.nextInt(this.quotes.size());
-        return quotes.get(index);
+        return quotes.get(randomGenerator.nextInt(this.quotes.size()));
     }
 }
