@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class Answer {
+public class AnswerController {
 //    private static List<Answer> answerList = new ArrayList<>(Arrays.asList(
-//            new Answer("Will I find true love?", "No"),
+//            new Answer(0, "Will I find true love?", "No"),
 //            new Answer("")
 //    ))
 }
