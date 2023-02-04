@@ -1,6 +1,5 @@
 package com.company.summativeprojectone.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +14,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(QuoteController.class)
+@WebMvcTest(AnswerController.class)
 
 public class AnswerControllerTest {
     // Wiring in the MockMvc object
     @Autowired
     private MockMvc mockMvc;
 
-    private ObjectMapper mapper = new ObjectMapper();
-
     @Test
-    public void shouldReturnAQuote() throws Exception {
-        String question = mapper.writeValueAsString("How are you?");
+    public void shouldReturnAnAnswer() throws Exception {
+        String question = "How are you?";
         // ACT
         mockMvc.perform(post("/magic")
                         .content(question)
