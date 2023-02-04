@@ -1,4 +1,4 @@
-package com.company.summativeprojectone.controllers;
+package com.company.summativeprojectone.controller;
 
 public class QuoteServiceController {
 }
