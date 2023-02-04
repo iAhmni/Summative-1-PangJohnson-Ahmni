@@ -22,7 +22,7 @@ public class AnswerController {
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public Answer askQuestion(@RequestBody Answer question) {
+    public Answer askQuestion(@RequestBody String question) {
         Random rand = new Random();
         return answerList.get(rand.nextInt(answerList.size()));
     }
