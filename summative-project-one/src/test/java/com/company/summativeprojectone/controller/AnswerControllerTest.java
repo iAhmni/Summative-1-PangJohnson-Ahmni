@@ -1,5 +1,7 @@
 package com.company.summativeprojectone.controller;
 
+import com.company.summativeprojectone.models.Answer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +23,19 @@ public class AnswerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    private final ObjectMapper mapper = new ObjectMapper();
+
     @Test
     public void shouldReturnAnAnswer() throws Exception {
-        String question = "How are you?";
+
+        Answer answer = new Answer(0, "How are you?", "");
+
+        // Convert Java Object to JSON
+        String inputAnswer = mapper.writeValueAsString(answer);
+
         // ACT
         mockMvc.perform(post("/magic")
-                        .content(question)
+                        .content(inputAnswer)
                         .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())

@@ -15,7 +15,7 @@ paths:
         content:
           application/json:
             schema:
-              type: string
+              $ref: '#/components/schemas/Answer'
         required: true
       responses:
         '201':

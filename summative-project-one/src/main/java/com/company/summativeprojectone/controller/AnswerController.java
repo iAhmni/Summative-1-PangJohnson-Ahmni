@@ -11,19 +11,19 @@ import java.util.Random;
 
 @RestController
 public class AnswerController {
-    private static List<Answer> answerList = new ArrayList<>(Arrays.asList(
-            new Answer(0, "Will I find true love?", "No"),
-            new Answer(1, "Will I become rich", "No"),
-            new Answer(2, "Will I live a short life", "It is certain"),
-            new Answer(3, "Will AI take over the world", "It is certain"),
-            new Answer(4, "May there be a way of stopping climate change", "No"),
-            new Answer(5, "Will Twitter go bankrupt", "It is certain")
-    ));
+    private static List<String> answerList = new ArrayList<>(Arrays.asList(
+            "No",
+            "It is certain",
+            "Yes",
+            "I'll think about",
+            "Ask me later",
+            "For sure"));
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public Answer askQuestion(@RequestBody String question) {
+    public Answer askQuestion(@RequestBody Answer answer) {
         Random rand = new Random();
-        return answerList.get(rand.nextInt(answerList.size()));
+        answer.setAnswer(answerList.get(rand.nextInt(answerList.size())));
+        return answer;
     }
 }
