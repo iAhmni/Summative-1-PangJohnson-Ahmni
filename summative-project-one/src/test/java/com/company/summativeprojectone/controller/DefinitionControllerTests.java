@@ -10,8 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(DefinitionController.class)
@@ -26,9 +25,6 @@ public class DefinitionControllerTests {
         mockMvc.perform(get("/word"))
                 .andDo(print())
                 .andExpect(status().isOk())
-
-                // ASSERT that the JSON array is present and not empty. We will test GET all endpoints deeper in the
-                // future but this is good enough for now.
-                .andExpect(jsonPath("$[0]").isNotEmpty());
+                .andExpect(jsonPath("$").isNotEmpty());
     }
 }
