@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
-public class QuoteServiceController {
+public class QuoteController {
     private List<Quote> quotes = new ArrayList<>();
     private Random randomGenerator = new Random();
 
-    public QuoteServiceController() {
+    public QuoteController() {
         this.quotes.add(new Quote(1,"Nelson Mandela", "The greatest glory in living lies not in never falling, but in rising every time we fall."));
         this.quotes.add(new Quote(2,"Walt Disney", "The way to get started is to quit talking and begin doing."));
         this.quotes.add(new Quote(3,"Steve Jobs", "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking."));
