@@ -18,8 +18,6 @@ public class DefinitionControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
-    private ObjectMapper mapper = new ObjectMapper();
-
     @Test
     public void shouldReturnRandomWord() throws Exception {
         mockMvc.perform(get("/word"))
