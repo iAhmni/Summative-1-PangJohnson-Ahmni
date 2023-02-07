@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Summative-Project-1" />
         <module name="summative-project-one" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Summative-Project-1" target="1.8" />
       <module name="summative-project-one" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Summative-Project-1" options="-parameters" />
       <module name="summative-project-one" options="-parameters" />
     </option>
   </component>
